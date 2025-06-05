@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} - typescript_api_startup_sl8s-running_unit_tests
 on:
   push:
     branches:
-      - sl8s
+      - main
   workflow_dispatch:
 env:
   node_version: 22.15.0

@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} - dart_web_startup_sl8s-running_unit_tests
 on:
   push:
     branches:
-      - sl8s
+      - main
   workflow_dispatch:
 env:
   flutter_channel: stable

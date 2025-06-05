@@ -17,7 +17,7 @@
 
 ## Tags
 
-- Use the [Catalogs](https://github.com/sl8s/dev?tab=readme-ov-file#catalogs) under each tag
+- Use the [Catalogs](https://github.com/sl8s/startup_sl8s?tab=readme-ov-file#catalogs) under each tag
 
 ### 0.0.1 -- <img src="assets/red_cross.svg" align alt="Red Cross"/>
 

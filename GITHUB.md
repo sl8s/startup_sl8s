@@ -18,8 +18,3 @@
 ## Branches
 
 - main (default)
-- sl8s
-
-### Pull Requests
-
-- sl8s -> main (default)

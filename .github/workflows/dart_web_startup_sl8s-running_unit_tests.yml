@@ -1,4 +1,4 @@
-name: dart_web_dev-running_unit_tests
+name: dart_web_startup_sl8s-running_unit_tests
 run-name: ${{ github.actor }} - dart_web_startup_sl8s-running_unit_tests
 on:
   push:

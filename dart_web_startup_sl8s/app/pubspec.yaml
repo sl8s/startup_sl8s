@@ -18,6 +18,8 @@ dependencies:
   intl: ^0.20.2
   responsive_framework: ^1.5.1
   go_router: ^15.1.0
+  flutter_dotenv: ^5.2.1
+  flutter_svg: ^2.1.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0
@@ -25,8 +27,69 @@ dev_dependencies:
 
 flutter:
   assets:
-    - assets/icons/app_icon.ico
-    - assets/icons/app_icon.png
+    - assets/icons/desktop/canceled_ellipse.svg
+    - assets/icons/desktop/completed_ellipse.svg
+    - assets/icons/desktop/icon_copy.svg
+    - assets/icons/desktop/icon_link.svg
+    - assets/icons/desktop/iconsax_arrow_down.svg
+    - assets/icons/desktop/iconsax_arrow_down_two.svg
+    - assets/icons/desktop/iconsax_arrow_up.svg
+    - assets/icons/desktop/in_progress_ellipse.svg
+    - assets/icons/desktop/registration_ellipse.svg
+    - assets/icons/large_desktop/canceled_ellipse.svg
+    - assets/icons/large_desktop/completed_ellipse.svg
+    - assets/icons/large_desktop/icon_copy.svg
+    - assets/icons/large_desktop/icon_link.svg
+    - assets/icons/large_desktop/iconsax_arrow_down.svg
+    - assets/icons/large_desktop/iconsax_arrow_down_two.svg
+    - assets/icons/large_desktop/iconsax_arrow_right_02.svg
+    - assets/icons/large_desktop/iconsax_arrow_up.svg
+    - assets/icons/large_desktop/in_progress_ellipse.svg
+    - assets/icons/large_desktop/registration_ellipse.svg
+    - assets/icons/large_tablet/canceled_ellipse.svg
+    - assets/icons/large_tablet/completed_ellipse.svg
+    - assets/icons/large_tablet/icon_copy.svg
+    - assets/icons/large_tablet/icon_link.svg
+    - assets/icons/large_tablet/iconsax_arrow_down.svg
+    - assets/icons/large_tablet/iconsax_arrow_down_two.svg
+    - assets/icons/large_tablet/iconsax_arrow_up.svg
+    - assets/icons/large_tablet/in_progress_ellipse.svg
+    - assets/icons/large_tablet/registration_ellipse.svg
+    - assets/icons/mobile/canceled_ellipse.svg
+    - assets/icons/mobile/completed_ellipse.svg
+    - assets/icons/mobile/icon_copy.svg
+    - assets/icons/mobile/icon_link.svg
+    - assets/icons/mobile/iconsax_arrow_down.svg
+    - assets/icons/mobile/iconsax_arrow_down_two.svg
+    - assets/icons/mobile/iconsax_arrow_up.svg
+    - assets/icons/mobile/in_progress_ellipse.svg
+    - assets/icons/mobile/registration_ellipse.svg
+    - assets/icons/tablet/canceled_ellipse.svg
+    - assets/icons/tablet/completed_ellipse.svg
+    - assets/icons/tablet/icon_copy.svg
+    - assets/icons/tablet/icon_link.svg
+    - assets/icons/tablet/iconsax_arrow_down.svg
+    - assets/icons/tablet/iconsax_arrow_down_two.svg
+    - assets/icons/tablet/iconsax_arrow_up.svg
+    - assets/icons/tablet/in_progress_ellipse.svg
+    - assets/icons/tablet/registration_ellipse.svg
+    - assets/icons/tv/canceled_ellipse.svg
+    - assets/icons/tv/completed_ellipse.svg
+    - assets/icons/tv/icon_copy.svg
+    - assets/icons/tv/icon_link.svg
+    - assets/icons/tv/iconsax_arrow_down.svg
+    - assets/icons/tv/iconsax_arrow_down_two.svg
+    - assets/icons/tv/iconsax_arrow_up.svg
+    - assets/icons/tv/in_progress_ellipse.svg
+    - assets/icons/tv/registration_ellipse.svg
+    - assets/images/desktop/discord.png
+    - assets/images/large_desktop/discord.png
+    - assets/images/large_tablet/discord.png
+    - assets/images/mobile/discord.png
+    - assets/images/tablet/discord.png
+    - assets/images/tv/discord.png
+    - assets/images/dev.png
+    - assets/.env
   fonts:
     - family: Inter
       fonts:

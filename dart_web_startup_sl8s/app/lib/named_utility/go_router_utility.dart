@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 @immutable
 final class GoRouterUtility {
-  static final GoRouter goRouter = GoRouter(
+  static final GoRouter defaultGoRouter = GoRouter(
       initialLocation: KeysRoutersUtility.mainVM,
       routes: [
         GoRoute(
@@ -29,4 +29,15 @@ final class GoRouterUtility {
       });
 
   const GoRouterUtility._();
+
+  static GoRouter getGoRouterFromNamedTestMain(Widget namedTestMain) {
+    return GoRouter(
+        initialLocation: "/",
+        routes: [
+          GoRoute(
+              path: "/",
+              builder: (BuildContext context, GoRouterState state) => namedTestMain),
+        ],
+        errorBuilder: (BuildContext context, GoRouterState state) => namedTestMain);
+  }
 }

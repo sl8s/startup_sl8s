@@ -1,6 +1,7 @@
-import 'package:dart_web_startup_sl8s/named_utility/ready_data_utility.dart';
+import 'package:dart_web_startup_sl8s/named_theme/base_named_theme.dart';
 import 'package:dart_web_startup_sl8s/named_utility/flutter_theme_utility.dart';
 import 'package:dart_web_startup_sl8s/named_utility/platform_utility.dart';
+import 'package:dart_web_startup_sl8s/named_utility/ready_data_utility.dart';
 import 'package:dart_web_startup_sl8s/named_vm/main_vm/data_for_main_vm.dart';
 import 'package:dart_web_startup_sl8s/named_vm/main_vm/enum_data_for_main_vm.dart';
 import 'package:flutter/material.dart';
@@ -246,20 +247,7 @@ final class _MainVMState extends State<MainVM> {
                     style: textThemeFromContextAndColor.bodyMedium),
               ),
             ),
-            desktopWidget: Scaffold(
-              backgroundColor: namedThemeFromContext.backgroundPrimary,
-              appBar: AppBar(
-                backgroundColor: namedThemeFromContext.backgroundPrimary,
-                title: Text(
-                    "Flutter App",
-                    style: textThemeFromContextAndColor.headlineMedium),
-              ),
-              body: Center(
-                child: Text(
-                    "DesktopWidget",
-                    style: textThemeFromContextAndColor.bodyMedium),
-              ),
-            ),
+            desktopWidget: _buildDesktopWidget(namedThemeFromContext,textThemeFromContextAndColor),
             largeDesktopWidget: Scaffold(
               backgroundColor: namedThemeFromContext.backgroundPrimary,
               appBar: AppBar(
@@ -322,5 +310,72 @@ final class _MainVMState extends State<MainVM> {
     await Future.delayed(const Duration(seconds: 1));
     _namedStreamWState.getDataForNamed.isLoading = false;
     return ReadyDataUtility.success;
+  }
+
+  Widget _buildDesktopWidget(BaseNamedTheme namedTheme, TextTheme textTheme) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container()
+          ),
+          Positioned(
+            top: 75.0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              color: namedTheme.backgroundPrimary,
+              height: double.infinity,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Column(
+                    children: [
+                      // 12 / 2
+                      for(var i = 1; i <= 6; i++)
+                        ...[
+                          Row(
+                            children: [
+                              for(var j = 1; j <= 2; j++)
+                                ...[
+                                  Expanded(
+                                    child: Card(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(16.0),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              "Tournament $j",
+                                              style: textTheme.bodyMedium,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  if(j < 2)
+                                    const SizedBox(width: 10.0)
+                                ],
+                            ],),
+                          if(i < 6)
+                            const SizedBox(width: 10.0)
+                          else if(i == 6)
+                            Row(
+                              children: [
+
+                              ],)
+                        ],
+                    ],),
+                )
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -1,4 +1,6 @@
+import 'package:dart_web_startup_sl8s/named_utility/go_router_utility.dart';
 import 'package:dart_web_startup_sl8s/named_utility/ready_data_utility.dart';
+import 'package:dart_web_startup_sl8s/app.dart';
 import 'package:flutter/material.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 
@@ -60,11 +62,9 @@ final class _ExampleVMTestMainState extends State<ExampleVMTestMain> {
           ),
         );
       case EnumDataForExampleVMTestMain.success:
-        return MaterialApp(
-          home: Scaffold(
-            body: Center(
-                child: Text("Hello World")
-            ),
+        return Scaffold(
+          body: Center(
+              child: Text("Hello World")
           ),
         );
     }
@@ -105,5 +105,5 @@ final class _ExampleVMTestMainState extends State<ExampleVMTestMain> {
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(ExampleVMTestMain());
+  runApp(App(goRouter: GoRouterUtility.getGoRouterFromNamedTestMain(ExampleVMTestMain())));
 }

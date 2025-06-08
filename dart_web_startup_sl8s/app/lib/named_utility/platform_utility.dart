@@ -177,4 +177,31 @@ final class PlatformUtility {
             color: color)
     );
   }
+
+  static int getNumberToLoadFromSeven(
+      BuildContext context,
+      {int numberOfElementsWMobile = 4,
+        int numberOfElementsWTablet = 5,
+        int numberOfElementsWLargeTablet = 8,
+        int numberOfElementsWDesktop = 12,
+        int numberOfElementsWLargeDesktop = 24,
+        int numberOfElementsWTV = 36})
+  {
+    if(ResponsiveBreakpoints.of(context).isMobile) {
+      return numberOfElementsWMobile;
+    }
+    if(ResponsiveBreakpoints.of(context).isTablet) {
+      return numberOfElementsWTablet;
+    }
+    if(ResponsiveBreakpoints.of(context).breakpoint.name == KeysBreakpointsUtility.largeTablet) {
+      return numberOfElementsWLargeTablet;
+    }
+    if(ResponsiveBreakpoints.of(context).isDesktop) {
+      return numberOfElementsWDesktop;
+    }
+    if(ResponsiveBreakpoints.of(context).breakpoint.name == KeysBreakpointsUtility.largeDesktop) {
+      return numberOfElementsWLargeDesktop;
+    }
+    return numberOfElementsWTV;
+  }
 }

@@ -89,7 +89,8 @@ flutter:
     - assets/images/tablet/discord.png
     - assets/images/tv/discord.png
     - assets/images/dev.png
-    - assets/.env
+    ## Don't forget to comment out the this line so that the tests in GitHub Action are successful.
+    ##- assets/.env
   fonts:
     - family: Inter
       fonts:

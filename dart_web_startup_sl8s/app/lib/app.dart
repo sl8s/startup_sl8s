@@ -1,5 +1,4 @@
 import 'package:dart_web_startup_sl8s/l10n/app_localizations.dart';
-import 'package:dart_web_startup_sl8s/named_utility/flutter_theme_utility.dart';
 import 'package:dart_web_startup_sl8s/named_utility/keys_breakpoints_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -12,19 +11,14 @@ final class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final namedThemeFromContext = FlutterThemeUtility.getNamedThemeFromContext(context);
     return MaterialApp.router(
         debugShowCheckedModeBanner: true,
         title: "",
         themeMode: ThemeMode.dark,
-        theme: ThemeData(
-            useMaterial3: true,
-            brightness: Brightness.light),
         darkTheme: ThemeData(
             useMaterial3: true,
             brightness: Brightness.dark,
             cardTheme: CardThemeData(
-              color: namedThemeFromContext.backgroundSecondary,
               elevation: 0.0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.zero,

@@ -80,6 +80,7 @@ flutter:
     - assets/icons/tv/icon_link.svg
     - assets/icons/tv/iconsax_arrow_down.svg
     - assets/icons/tv/iconsax_arrow_down_two.svg
+    - assets/icons/tv/iconsax_arrow_right_02.svg
     - assets/icons/tv/iconsax_arrow_up.svg
     - assets/icons/tv/in_progress_ellipse.svg
     - assets/icons/tv/registration_ellipse.svg

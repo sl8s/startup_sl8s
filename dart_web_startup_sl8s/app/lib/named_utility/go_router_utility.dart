@@ -1,17 +1,17 @@
 import 'package:dart_web_startup_sl8s/named_utility/keys_routers_utility.dart';
 import 'package:dart_web_startup_sl8s/named_vm/example_vm/example_vm.dart';
-import 'package:dart_web_startup_sl8s/named_vm/main_vm/main_vm.dart';
+import 'package:dart_web_startup_sl8s/named_vm/home_vm/home_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 @immutable
 final class GoRouterUtility {
   static final GoRouter defaultGoRouter = GoRouter(
-      initialLocation: KeysRoutersUtility.mainVM,
+      initialLocation: KeysRoutersUtility.homeVM,
       routes: [
         GoRoute(
-            path: KeysRoutersUtility.mainVM,
-            builder: (BuildContext context, GoRouterState state) => MainVM()),
+            path: KeysRoutersUtility.homeVM,
+            builder: (BuildContext context, GoRouterState state) => HomeVM()),
         GoRoute(
             path: KeysRoutersUtility.exampleVM,
             builder: (BuildContext context, GoRouterState state) => ExampleVM())

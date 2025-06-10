@@ -1,4 +1,4 @@
-enum EnumDataForMainVM {
+enum EnumDataForHomeVM {
   isLoading,
   exception,
   success

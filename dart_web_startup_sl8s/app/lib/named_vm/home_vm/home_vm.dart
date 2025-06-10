@@ -2,8 +2,8 @@ import 'package:dart_web_startup_sl8s/named_theme/base_named_theme.dart';
 import 'package:dart_web_startup_sl8s/named_utility/ready_data_utility.dart';
 import 'package:dart_web_startup_sl8s/named_utility/flutter_theme_utility.dart';
 import 'package:dart_web_startup_sl8s/named_utility/platform_utility.dart';
-import 'package:dart_web_startup_sl8s/named_vm/main_vm/data_for_main_vm.dart';
-import 'package:dart_web_startup_sl8s/named_vm/main_vm/enum_data_for_main_vm.dart';
+import 'package:dart_web_startup_sl8s/named_vm/home_vm/data_for_home_vm.dart';
+import 'package:dart_web_startup_sl8s/named_vm/home_vm/enum_data_for_home_vm.dart';
 import 'package:dart_web_startup_sl8s/named_widget/card_widget.dart';
 import 'package:dart_web_startup_sl8s/named_widget/home_app_bar_widget.dart';
 import 'package:dart_web_startup_sl8s/named_widget/rounded_icon_text_filled_button_widget.dart';
@@ -11,14 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 
-final class MainVM extends StatefulWidget {
-  const MainVM({super.key});
+final class HomeVM extends StatefulWidget {
+  const HomeVM({super.key});
 
   @override
-  State<MainVM> createState() => _MainVMState();
+  State<HomeVM> createState() => _HomeVMState();
 }
 
-final class _MainVMState extends State<MainVM> {
+final class _HomeVMState extends State<HomeVM> {
   // ModelWrapperRepository
   // NamedUtility
 
@@ -26,7 +26,7 @@ final class _MainVMState extends State<MainVM> {
   final _tempCacheProvider = lamm.TempCacheProvider();
 
   // NamedStreamWState
-  late final lamm.BaseNamedStreamWState<DataForMainVM> _namedStreamWState;
+  late final lamm.BaseNamedStreamWState<DataForHomeVM> _namedStreamWState;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ final class _MainVMState extends State<MainVM> {
     final textThemeFromContextAndColor = PlatformUtility.getTextThemeFromContextAndColor(context, namedThemeFromContext.text);
     final dataWNamed = _namedStreamWState.getDataForNamed;
     switch(dataWNamed.getEnumDataForNamed) {
-      case EnumDataForMainVM.isLoading:
+      case EnumDataForHomeVM.isLoading:
         return PlatformUtility.getNamedWidgetFromSeven(
             context,
             mobileWidget: _buildMobileWidgetWIsLoading(
@@ -62,7 +62,7 @@ final class _MainVMState extends State<MainVM> {
                 namedThemeFromContext,
                 textThemeFromContextAndColor)
         );
-      case EnumDataForMainVM.exception:
+      case EnumDataForHomeVM.exception:
         return PlatformUtility.getNamedWidgetFromSeven(
           context,
           mobileWidget: _buildMobileWidgetWException(
@@ -96,7 +96,7 @@ final class _MainVMState extends State<MainVM> {
               textThemeFromContextAndColor,
               dataWNamed),
         );
-      case EnumDataForMainVM.success:
+      case EnumDataForHomeVM.success:
         return PlatformUtility.getNamedWidgetFromSeven(
           context,
           mobileWidget: _buildMobileWidgetWSuccess(
@@ -235,7 +235,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildMobileWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildMobileWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -253,7 +253,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildTabletWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildTabletWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -271,7 +271,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildLargeTabletWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildLargeTabletWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -289,7 +289,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildDesktopWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildDesktopWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -307,7 +307,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildLargeDesktopWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildLargeDesktopWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -325,7 +325,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildTVWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildTVWidgetWException(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -343,7 +343,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildMobileWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildMobileWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -361,7 +361,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildTabletWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildTabletWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -379,7 +379,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildLargeTabletWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildLargeTabletWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -397,7 +397,7 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildDesktopWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildDesktopWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     final textThemeFromContextAndColor = PlatformUtility.getTextThemeFromContextAndColor(context, namedTheme.hintText);
     return Scaffold(
       body: Stack(
@@ -558,25 +558,168 @@ final class _MainVMState extends State<MainVM> {
     );
   }
 
-  Widget _buildLargeDesktopWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildLargeDesktopWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
+    final textThemeFromContextAndColor = PlatformUtility.getTextThemeFromContextAndColor(context, namedTheme.hintText);
     return Scaffold(
-      backgroundColor: namedTheme.backgroundPrimary,
-      appBar: AppBar(
-        backgroundColor: namedTheme.backgroundPrimary,
-        title: Text(
-            "Flutter App",
-            style: textTheme.headlineMedium
-        ),
-      ),
-      body: Center(
-        child: Text(
-            "LargeDesktopWidget",
-            style: textTheme.bodyMedium),
+      body: Stack(
+        children: [
+          Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: HomeAppBarWidget()
+          ),
+          Positioned(
+            top: 75.0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              color: namedTheme.backgroundPrimary,
+              height: double.infinity,
+              child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(32.0),
+                    child: Column(
+                      children: [
+                        // 12 / 3
+                        for(var i = 1; i <= 4; i++)
+                          ...[
+                            Row(
+                              children: [
+                                for(var j = 1; j <= 3; j++)
+                                  ...[
+                                    Expanded(
+                                      child: CardWidget(
+                                        onTap: () {  },
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(16.0),
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      children: [
+                                                        Wrap(
+                                                          spacing: 10.0,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize: MainAxisSize.min,
+                                                              children: [
+                                                                Flexible(
+                                                                  child: Text(
+                                                                      "10 May - 08:34 PM",
+                                                                      style: textThemeFromContextAndColor.bodySmall,
+                                                                      overflow: TextOverflow.ellipsis
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Row(
+                                                              mainAxisSize: MainAxisSize.min,
+                                                              children: [
+                                                                SvgPicture.asset("assets/icons/large_desktop/canceled_ellipse.svg"),
+                                                                SizedBox(width: 10.0,),
+                                                                Flexible(
+                                                                  child: Row(
+                                                                    mainAxisSize: MainAxisSize.min,
+                                                                    children: [
+                                                                      SizedBox(
+                                                                          height: 27.0,
+                                                                          width: 27.0,
+                                                                          child: CircleAvatar(
+                                                                              backgroundImage: AssetImage("assets/images/dev.png"))
+                                                                      ),
+                                                                      Flexible(
+                                                                        child: Text(
+                                                                            "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+                                                                            style: textThemeFromContextAndColor.bodySmall,
+                                                                            overflow: TextOverflow.ellipsis
+                                                                        ),
+                                                                      ),
+                                                                    ],),
+                                                                )
+                                                              ],
+                                                            )
+                                                          ],),
+                                                        SizedBox(height: 8.0,),
+                                                        Text(
+                                                            "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+                                                            style: textTheme.bodySmall),
+                                                      ],
+                                                    ),
+                                                    SizedBox(height: 16.0,),
+                                                    Wrap(
+                                                      spacing: 10.0,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisSize: MainAxisSize.min,
+                                                          children: [
+                                                            SvgPicture.asset("assets/icons/large_desktop/registration_ellipse.svg"),
+                                                            SizedBox(width: 10.0,),
+                                                            Flexible(
+                                                              child: Text(
+                                                                  "Registration",
+                                                                  style: textTheme.bodySmall,
+                                                                  overflow: TextOverflow.ellipsis),
+                                                            ),
+                                                          ],),
+                                                        Row(
+                                                          mainAxisSize: MainAxisSize.min,
+                                                          children: [
+                                                            SvgPicture.asset("assets/icons/large_desktop/canceled_ellipse.svg"),
+                                                            SizedBox(width: 10.0,),
+                                                            Flexible(
+                                                              child: Text(
+                                                                  "100\$",
+                                                                  style: textTheme.bodySmall,
+                                                                  overflow: TextOverflow.ellipsis),
+                                                            ),
+                                                          ],),
+                                                      ],)
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(width: 10.0,),
+                                              SvgPicture.asset("assets/icons/large_desktop/iconsax_arrow_right_02.svg")
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    // First indent
+                                    if(j < 2)
+                                      const SizedBox(width: 10.0)
+                                  ],
+                              ],),
+                            if(i < 6)
+                              const SizedBox(width: 10.0)
+                            else if(i == 6)
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    RoundedIconTextFilledButtonWidget(
+                                      onPressed: () {  },
+                                      name: "LOAD MORE",)
+                                  ],),
+                              )
+                          ],
+                      ],),
+                  )
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildTVWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForMainVM dataWNamed) {
+  Widget _buildTVWidgetWSuccess(BuildContext context,BaseNamedTheme namedTheme, TextTheme textTheme, DataForHomeVM dataWNamed) {
     return Scaffold(
       backgroundColor: namedTheme.backgroundPrimary,
       appBar: AppBar(
@@ -596,7 +739,7 @@ final class _MainVMState extends State<MainVM> {
 
   @override
   void initState() {
-    _namedStreamWState = lamm.DefaultStreamWState(DataForMainVM(true));
+    _namedStreamWState = lamm.DefaultStreamWState(DataForHomeVM(true));
     super.initState();
     _init();
   }
@@ -613,7 +756,7 @@ final class _MainVMState extends State<MainVM> {
       setState(() {});
     });
     final firstRequest = await _firstRequest();
-    lamm.debugPrint("MainVM: $firstRequest");
+    lamm.debugPrint("HomeVM: $firstRequest");
     if(!mounted) {
       return;
     }
